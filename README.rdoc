@@ -1,0 +1,6 @@
+== Countdown Timer
+
+This web app allows users to log in and add events that they are looking forward to (or dreading :P), 
+the countdown timer then counts down days to that events. Users can add a description and image for each event as well
+
+Only logged in users can see events, and logged in users can only see their own events.it
