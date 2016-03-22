@@ -1,0 +1,25 @@
+- if user_signed_in?
+	%p#intro
+		Hello
+		= current_user.email
+		%br/
+		%span
+			Get excited by the future!
+- else
+	%p#intro
+		What are you excited about?
+		%br/
+		%span
+			Get excited by the future!
+#events
+	- @events.each do |event|
+		.event
+			.event_image
+				= link_to (image_tag event.image.url(:medium)), event
+			.event_content
+				.title
+					%h2= link_to event.title, event
+				.data.clearfix
+					%p.username
+						Shared by
+						= event.user.email
