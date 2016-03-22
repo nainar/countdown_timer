@@ -9,7 +9,9 @@
 		.event_image_description
 			= image_tag @event.image.url(:medium)
 			.description= simple_format(@event.description)
-			.description= @event.calendar_entry.to_formatted_s(:long)   
+			.description
+				= (@event.calendar_entry - Date.today).to_i
+				days left
 		.event_data
 			- if @event.user == current_user
 				= link_to "Edit", edit_event_path(@event), class: "data"
