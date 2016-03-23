@@ -2,7 +2,7 @@
 	%h1= @event.title
 	%p.username
 		Shared by
-		= @event.user.email
+		= @event.user.username
 		= time_ago_in_words(@event.created_at)
 		ago
 	.clearfix
