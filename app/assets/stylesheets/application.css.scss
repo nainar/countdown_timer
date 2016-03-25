@@ -23,10 +23,10 @@ body {
   font-family: 'Roboto';
 }
 
-#notice {
-	text-align: center;
-	font-size: 0.6em;
-	color: $dark;
-	font-weight: 100;
+#add {
+    position: absolute;
+    float:bottom;
+    bottom: 16px;
+    right: 16px;
 }
 
