@@ -1,0 +1,14 @@
+!!!
+%html
+%head
+	%title Countdown Timer
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+%body
+	= link_to "Countdown Timer", root_path
+	= link_to "New Workout", new_event_path
+	%p.notice= notice
+	%p.alert= alert
+	.container
+		= yield
