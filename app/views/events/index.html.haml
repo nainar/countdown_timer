@@ -1,25 +1,23 @@
 - if user_signed_in?
-	%p#intro
+	%p
 		Hello
 		= current_user.username
 		%br/
 		%span
 			Get excited by the future!
 - else
-	%p#intro
+	%p
 		What are you excited about?
 		%br/
 		%span
 			Get excited by the future!
-#events
-	- @events.each do |event|
-		.event
-			.event_image
-				= link_to (image_tag event.image.url(:medium)), event
-			.event_content
-				.title
-					%h2= link_to event.title, event
-				.data.clearfix
-					%p.username
-						Shared by
-						= event.user.username
+- @events.each do |event|
+	%h2= link_to event.title, event
+	- if (event.calendar_entry - Date.today).to_i > 0
+		= (event.calendar_entry - Date.today).to_i
+		days left
+	- else
+		This event has passed!
+	%p
+		Shared by
+		= event.user.username

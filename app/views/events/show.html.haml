@@ -1,18 +1,16 @@
-#event_show
-	%h1= @event.title
-	%p.username
-		Shared by
-		= @event.user.username
-		= time_ago_in_words(@event.created_at)
-		ago
-	.clearfix
-		.event_image_description
-			= image_tag @event.image.url(:medium)
-			.description= simple_format(@event.description)
-			.description
-				= (@event.calendar_entry - Date.today).to_i
-				days left
-		.event_data
-			- if @event.user == current_user
-				= link_to "Edit", edit_event_path(@event), class: "data"
-				= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
+%h1= @event.title
+%p
+	Shared by
+	= @event.user.username
+	= time_ago_in_words(@event.created_at)
+	ago
+	.description= simple_format(@event.description)
+	- if (@event.calendar_entry - Date.today).to_i > 0
+		= (@event.calendar_entry - Date.today).to_i
+		days left
+	- else
+		This event has passed!
+	= image_tag @event.image.url(:medium)
+	- if @event.user == current_user
+		= link_to "Edit", edit_event_path(@event), class: "data"
+		= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure?" }, class: "data"

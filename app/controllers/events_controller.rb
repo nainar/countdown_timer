@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	
 	def index
-		@events = Event.all.order("created_at DESC")
+		@events = Event.all.order("calendar_entry DESC")
 	end
 
 	def show
