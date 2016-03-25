@@ -40,6 +40,7 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bugsnag (4.0.0)
     builder (3.2.2)
     byebug (8.2.2)
     climate_control (0.0.3)
@@ -90,6 +91,8 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    nokogumbo (1.4.2)
+      nokogiri
     orm_adapter (0.5.0)
     paperclip (4.3.5)
       activemodel (>= 3.2.0)
@@ -98,6 +101,13 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.4)
+    polymer-elements-rails (1.0.1)
+      polymer-rails (~> 1.0, >= 1.0.3)
+    polymer-rails (1.2.4.1)
+      nokogiri (~> 1.6)
+      nokogumbo (= 1.4.2)
+      rails (>= 3.1.0)
+      sprockets (~> 3.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -179,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bugsnag
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.6)
@@ -188,6 +199,8 @@ DEPENDENCIES
   masonry-rails (~> 0.2.4)
   paperclip (~> 4.3, >= 4.3.2)
   pg
+  polymer-elements-rails
+  polymer-rails
   rails (= 4.2.5.1)
   rails_12factor
   sass-rails (~> 5.0)

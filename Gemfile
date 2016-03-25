@@ -23,6 +23,10 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'masonry-rails', '~> 0.2.4'
+gem 'bugsnag'
+gem 'polymer-rails'
+# gem 'polymer-paper-rails'
+gem 'polymer-elements-rails'
 
 group :development, :test do
   gem 'byebug'

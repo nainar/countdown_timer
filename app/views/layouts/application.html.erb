@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= html_import_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<paper-header-panel> Header
+  <paper-toolbar>Header</paper-toolbar>
+  <div>
+  	<%= yield %>
+  </div>
+</paper-header-panel>
+
+<paper-button raised>New workout</paper-button>
+<paper-fab icon="add" role="button" tabindex="0" aria-disabled="false" class="x-scope paper-fab-0"></paper-fab>
+<paper-fab mini="" icon="favorite" role="button" tabindex="0" aria-disabled="false" class="x-scope paper-fab-0"></paper-fab>
+<paper-fab icon="star" role="button" tabindex="0" aria-disabled="false" class="x-scope paper-fab-0"></paper-fab>
+
+</body>
+</html>
